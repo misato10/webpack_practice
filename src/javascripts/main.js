@@ -1,6 +1,6 @@
 // モジュールの読み込み
-import my from './modules/my.js';
-import './modules/my.css';
+import my from './my.js';
+import '../stylesheets/main.css';
 
 console.log('webpack');
 

@@ -1,15 +1,17 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+// clean-webpack-plugin から　CleanWebpackPluginのクラスのみ使用する
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/javascripts/main.js',
   //ファイルの出力場所 
   // ※出力場所は絶対パスで指定する必要がある
   output:　{
     // path.resolve(__dirname,で絶対パスを指定することができる
     path: path.resolve(__dirname, './dist'),
-    filename: 'main.js'
+    filename: 'javascripts/main.js'
   },
   module: {
     rules: [
@@ -30,9 +32,12 @@ module.exports = {
     ]
   },
   plugins: [
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: './stylesheets/main.css'
+    }),
     new HtmlWebpackPlugin({
-      template: './src/index.html'
-    })
+      template: './src/templates/index.html'
+    }),
+    new CleanWebpackPlugin()
   ]
 }
