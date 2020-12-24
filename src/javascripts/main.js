@@ -8,6 +8,11 @@ import '../stylesheets/main.scss';
 
 console.log('webpack');
 
+import add from './add.ts';
+
+console.log(add(3, 9));
+console.log('This is index.js');
+
 // モジュールを実行
 my();
 
