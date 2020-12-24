@@ -1,0 +1,11 @@
+.menu {
+  display: flex;
+  margin-bottom: 4em; }
+  .menu__item {
+    margin-right: 0.5em; }
+    .menu__item a {
+      padding: 0.5em;
+      border-bottom: 4px solid #ddd;
+      text-decoration: none; }
+      .menu__item a:hover {
+        color: #8dc78d; }
